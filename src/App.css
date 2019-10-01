@@ -20,3 +20,13 @@
 .App-link {
   color: #09d3ac;
 }
+
+.navbar {
+  overflow: hidden;
+  /* Set the navbar to fixed position */
+  position: fixed;
+  /* Position the navbar at the top of the page */
+  top: 0;
+  /* Full width */
+  width: 100%;
+}

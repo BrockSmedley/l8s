@@ -1,12 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default () =>
-    <nav class="uk-navbar-container navbar" uk-navbar>
-        <div class="uk-navbar-left">
-            <ul class="uk-navbar-nav">
-                <li class="uk-active"><a href="#">Home</a></li>
-                <li class="uk-parent"><a href="#">Other</a></li>
-                <li><a href=""></a></li>
-            </ul>
-        </div>
-    </nav>
+const PagePath = {
+    Home: '/',
+    Other: '/other'
+};
+
+function Navbar(props) {
+    return (
+        <nav className="uk-navbar-container navbar">
+            <div className="uk-navbar-left">
+                <ul className="uk-navbar-nav">
+                    <li className={`uk-active`}>
+                        <Link to={PagePath.Home}>Home</Link>
+                    </li>
+                    <li className="uk-active">
+                        <Link to={PagePath.Other}>Other</Link>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    );
+}
+
+export { Navbar, PagePath }

@@ -46,7 +46,7 @@ export default (props) => {
                         <img src={projects[projectIdx].img} alt="" />
                         <div>
                             <p>{projects[projectIdx].detail}</p>
-                            <button className="uk-modal-close" type="button">OK</button>
+                            <button className="uk-modal-close-default" type="button" uk-close="true"></button>
                         </div>
                     </Row>
                 </div>

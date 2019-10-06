@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 import Row from '../components/uikit/Row';
 import logo from '../logo.svg';
 
-// TODO: use dotenv for this & use in title as well
-const brand = "Catchy Company Name";
+const brand = process.env.REACT_APP_TITLE;
 
 const services = [
-    { name: "Development", description: "I build shit for you." },
-    { name: "Consulting", description: "I help you get shit built." },
-    { name: "Teaching", description: "I teach you how to build shit." },
+    { name: "Development", description: "We build it for you." },
+    { name: "Consulting", description: "We help you get it built." },
+    { name: "Teaching", description: "We teach you how to build it." },
 ];
 
 function modalCard(service, setService) {
@@ -47,10 +46,10 @@ export default (props) => {
             {/* modal */}
             <div id="modal-id" uk-modal="true">
                 <div className="uk-modal-dialog uk-modal-body">
-                    <a href={`#?service=${service.name}`} target="_blank" title={`View ${service.name}`}>
+                    <a href={`#?service=${service.name}`} target="_blank" rel="noopener noreferrer" title={`View ${service.name}`}>
                         <h2 className="uk-modal-title">{service.name}</h2>
                     </a>
-
+                    <p>{service.description}</p>
                     <div>
                         <button className="uk-modal-close-default" type="button" uk-close="true"></button>
                     </div>

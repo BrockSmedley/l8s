@@ -4,6 +4,7 @@ import './App.css';
 import { Navbar, PagePath } from './components/Navbar';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
+require('dotenv').config();
 
 class App extends Component {
     constructor(props) {
@@ -15,7 +16,7 @@ class App extends Component {
         this.componentDidMount = this.componentDidMount.bind(this);
     }
     giveMoney() {
-        alert("Pls give money.");
+        alert("Pls give money to " + process.env.REACT_APP_TITLE + ".");
     }
     setPage(page) {
         this.setState({ page });

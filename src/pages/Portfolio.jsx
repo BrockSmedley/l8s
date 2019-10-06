@@ -27,11 +27,6 @@ const projects = [
         "name": "xfinite", description: "Network Monitoring/Reporting Tool", img: logo,
         detail: "Monitors network speed and tweets at your provider when it's below a threshold.",
         href: "https://github.com/BrockSmedley/xfinite"
-    },
-    {
-        "name": "All My Code", description: "Hosted on GitHub", img: logo,
-        detail: "Check out all my public code repositories on GitHub.",
-        href: "https://github.com/BrockSmedley"
     }
 ];
 
@@ -46,7 +41,7 @@ function project(n, setProjectIdx) {
             }}
         >
             <div className="uk-card-media-left uk-cover-container">
-                <img src="images/light.jpg" src={projects[n].img} alt={projects[n].name} uk-cover="true" />
+                <img src={projects[n].img} alt={projects[n].name} uk-cover="true" />
                 <canvas width="500" height="300"></canvas>
             </div>
             <div>
@@ -75,11 +70,11 @@ export default (props) => {
             {/* <!-- This is the modal --> */}
             <div id="project-id" uk-modal="true">
                 <div className="uk-modal-dialog uk-modal-body">
-                    <a href={projects[projectIdx].href} target="_blank" title={`View ${projects[projectIdx].name}`}>
+                    <a href={projects[projectIdx].href} target="_blank" rel="noopener noreferrer" title={`View ${projects[projectIdx].name}`}>
                         <h2 className="uk-modal-title">{projects[projectIdx].name}</h2>
                     </a>
                     <Row cols={2}>
-                        <a href={projects[projectIdx].href} target="_blank">
+                        <a href={projects[projectIdx].href} target="_blank" rel="noopener noreferrer">
                             <img src={projects[projectIdx].img} alt={projects[projectIdx].name} title={`View ${projects[projectIdx].name}`} />
                         </a>
                         <div>

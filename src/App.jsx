@@ -4,8 +4,6 @@ import './App.css';
 import { Navbar, PagePath } from './components/Navbar';
 import Home from './pages/Home';
 import Other from './pages/Other';
-import { createBrowserHistory as history } from 'history';
-
 
 class App extends Component {
     constructor(props) {
@@ -13,24 +11,26 @@ class App extends Component {
         this.state = {
             page: PagePath.Home
         };
+        this.setPage = this.setPage.bind(this);
+        this.componentDidMount = this.componentDidMount.bind(this);
     }
     giveMoney() {
         alert("Pls give money.");
     }
+    setPage(page) {
+        this.setState({ page });
+    }
+    componentDidMount() {
+        this.setPage(this.state.page);
+    }
     render() {
         return (
-            <Router history={history}>
+            <Router>
                 <div className="App">
-                    {/* 
-                    TODO: send selected page to navbar for "active" highlighting
-                    https://reacttraining.com/react-router/web/example/sidebar 
-                    */}
-                    <Navbar />
+                    <Navbar page={this.state.page} setPage={this.setPage} />
                     <div style={{ marginTop: 80 }}>
                         <Switch>
-                            <Route path={PagePath.Other}>
-                                <Other />
-                            </Route>
+                            <Route path={PagePath.Other} component={Other} />
                             <Route path={PagePath.Home}>
                                 <Home giveMoney={this.giveMoney} />
                             </Route>

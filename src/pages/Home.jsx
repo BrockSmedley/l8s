@@ -27,7 +27,7 @@ export default (props) =>
         </Row>
         <Row cols={1}>
             <div className="uk-card uk-card-body">
-                <button class="uk-button uk-button-default" onClick={props.giveMoney}>Give me your money now.</button>
+                <button className="uk-button uk-button-default" onClick={props.giveMoney}>Give me your money now.</button>
             </div>
         </Row>
     </>;

@@ -6,17 +6,23 @@ const PagePath = {
     Other: '/other'
 };
 
+function click(props, page) {
+    props.setPage(page);
+}
+
+function HLink(href, name, props) {
+    return <li className={href === props.page ? `uk-active` : ``}>
+        <Link to={href} onClick={() => click(props, href)}>{name}</Link>
+    </li>;
+}
+
 function Navbar(props) {
     return (
         <nav className="uk-navbar-container navbar">
             <div className="uk-navbar-left">
                 <ul className="uk-navbar-nav">
-                    <li className={`uk-active`}>
-                        <Link to={PagePath.Home}>Home</Link>
-                    </li>
-                    <li className="uk-active">
-                        <Link to={PagePath.Other}>Other</Link>
-                    </li>
+                    {HLink(PagePath.Home, "Home", props)}
+                    {HLink(PagePath.Other, "Other", props)}
                 </ul>
             </div>
         </nav>

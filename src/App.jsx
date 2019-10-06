@@ -19,6 +19,7 @@ class App extends Component {
     }
     setPage(page) {
         this.setState({ page });
+        // TODO: use something else for this; not accurate on href load
     }
     componentDidMount() {
         this.setPage(this.state.page);

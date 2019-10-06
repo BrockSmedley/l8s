@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PagePath = {
+    Contact: '/contact',
     Home: '/',
     Portfolio: '/portfolio'
 };
@@ -11,7 +12,7 @@ function click(props, page) {
 }
 
 function HLink(href, name, props) {
-    return <li className={href === props.page ? `uk-active` : ``}>
+    return <li className={window.location.pathname === href ? `uk-active` : ``}>
         <Link to={href} onClick={() => click(props, href)}>{name}</Link>
     </li>;
 }
@@ -23,6 +24,7 @@ function Navbar(props) {
                 <ul className="uk-navbar-nav">
                     {HLink(PagePath.Home, "Home", props)}
                     {HLink(PagePath.Portfolio, "Portfolio", props)}
+                    {HLink(PagePath.Contact, "Contact", props)}
                 </ul>
             </div>
         </nav>

@@ -4,6 +4,7 @@ import './App.css';
 import { Navbar, PagePath } from './components/Navbar';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
+import Contact from './pages/Contact';
 require('dotenv').config();
 
 class App extends Component {
@@ -20,7 +21,6 @@ class App extends Component {
     }
     setPage(page) {
         this.setState({ page });
-        // TODO: use something else for this; not accurate on href load
     }
     componentDidMount() {
         this.setPage(this.state.page);
@@ -33,6 +33,7 @@ class App extends Component {
                     <div style={{ marginTop: 80 }}>
                         <Switch>
                             <Route path={PagePath.Portfolio} component={Portfolio} />
+                            <Route path={PagePath.Contact} component={Contact} />
                             <Route path={PagePath.Home}>
                                 <Home giveMoney={this.giveMoney} />
                             </Route>

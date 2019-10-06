@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const PagePath = {
     Home: '/',
-    Other: '/other'
+    Portfolio: '/portfolio'
 };
 
 function click(props, page) {
@@ -22,7 +22,7 @@ function Navbar(props) {
             <div className="uk-navbar-left">
                 <ul className="uk-navbar-nav">
                     {HLink(PagePath.Home, "Home", props)}
-                    {HLink(PagePath.Other, "Other", props)}
+                    {HLink(PagePath.Portfolio, "Portfolio", props)}
                 </ul>
             </div>
         </nav>

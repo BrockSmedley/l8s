@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import { Navbar, PagePath } from './components/Navbar';
 import Home from './pages/Home';
-import Other from './pages/Other';
+import Portfolio from './pages/Portfolio';
 
 class App extends Component {
     constructor(props) {
@@ -30,7 +30,7 @@ class App extends Component {
                     <Navbar page={this.state.page} setPage={this.setPage} />
                     <div style={{ marginTop: 80 }}>
                         <Switch>
-                            <Route path={PagePath.Other} component={Other} />
+                            <Route path={PagePath.Portfolio} component={Portfolio} />
                             <Route path={PagePath.Home}>
                                 <Home giveMoney={this.giveMoney} />
                             </Route>

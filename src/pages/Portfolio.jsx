@@ -43,7 +43,7 @@ const projects = [
 
 function project(n, setProjectIdx) {
     return (
-        <div className="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin-top uk-margin-bottom" uk-grid="true"
+        <div className="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid="true"
             key={n}
             style={{ width: "100%" }}
             uk-toggle="target: #project-id"
@@ -75,7 +75,7 @@ export default (props) => {
     const [projectIdx, setProjectIdx] = useState(0);
 
     return (
-        <div className="uk-container">
+        <div className="uk-container uk-padding">
             <div className="uk-grid" uk-grid="true">
                 {
                     projects.map((val, idx) => {

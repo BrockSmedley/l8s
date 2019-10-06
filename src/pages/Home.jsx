@@ -29,8 +29,7 @@ export default (props) => {
                 <img src={logo} className="App-logo" alt="logo" />
                 <p>{brand}</p>
             </header>
-            <br />
-            <div className="uk-container">
+            <div className="uk-container uk-padding">
                 <Row cols={3}>
                     {modalCard(services[0], setService)}
                     {modalCard(services[1], setService)}

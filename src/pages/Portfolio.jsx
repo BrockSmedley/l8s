@@ -43,7 +43,7 @@ const projects = [
 
 function project(n, setProjectIdx) {
     return (
-        <div className="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin-top uk-margin-bottom" uk-grid="true"
+        <div className="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid="true"
             key={n}
             style={{ width: "100%" }}
             uk-toggle="target: #project-id"
@@ -52,7 +52,7 @@ function project(n, setProjectIdx) {
             }}
         >
             <div className="uk-card-media-left uk-cover-container">
-                <img src={projects[n].img} alt={projects[n].name} uk-cover="true" />
+                <img src={projects[n].img} alt={projects[n].name} uk-cover="true" uk-img="true" />
                 <canvas width="400" height="350"></canvas>
             </div>
             <div>
@@ -62,7 +62,7 @@ function project(n, setProjectIdx) {
 
                     <div className="uk-grid uk-flex-center uk-grid-margin" uk-grid="true" style={{ padding: 32 }}>
                         {projects[n].tech.map((val, idx) => {
-                            return <span>{val}</span>;
+                            return <span key={idx}>{val}</span>;
                         })}
                     </div>
                 </div>
@@ -75,7 +75,7 @@ export default (props) => {
     const [projectIdx, setProjectIdx] = useState(0);
 
     return (
-        <div className="uk-container">
+        <div className="uk-container uk-padding">
             <div className="uk-grid" uk-grid="true">
                 {
                     projects.map((val, idx) => {

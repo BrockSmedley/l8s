@@ -27,6 +27,11 @@ const projects = [
         "name": "xfinite", description: "Network Monitoring/Reporting Tool", img: logo,
         detail: "Monitors network speed and tweets at your provider when it's below a threshold.",
         href: "https://github.com/BrockSmedley/xfinite"
+    },
+    {
+        "name": "L8S Software Services", description: "This site.", img: logo,
+        detail: "See the source code for the website you're viewing right now!",
+        href: "https://github.com/BrockSmedley/smedley-consulting-portfolio"
     }
 ];
 

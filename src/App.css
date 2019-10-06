@@ -29,4 +29,5 @@
   top: 0;
   /* Full width */
   width: 100%;
+  z-index: 1000;
 }

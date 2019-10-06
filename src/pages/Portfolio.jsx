@@ -4,7 +4,7 @@ import logo from '../logo.svg';
 
 const projects = [
     {
-        "name": "24HourStatus", description: "Project Management Website", img: logo,
+        "name": "24HourStatus", description: "Project Management Website", img: "/img/24hs.png",
         detail: "Let your clients access & update projects without them having to register an account. Created for IRC RES LLC.",
         href: "https://24hourstatus.com"
     },
@@ -42,7 +42,7 @@ function project(n, setProjectIdx) {
         >
             <div className="uk-card-media-left uk-cover-container">
                 <img src={projects[n].img} alt={projects[n].name} uk-cover="true" />
-                <canvas width="500" height="300"></canvas>
+                <canvas width="400" height="350"></canvas>
             </div>
             <div>
                 <div className="uk-card-body uk-link-heading">

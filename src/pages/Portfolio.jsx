@@ -9,7 +9,6 @@ const projects = [
     { "name": "Something", description: "Does stuff", img: logo, detail: "Does A. Does B. Solves problem X." },
     { "name": "Something", description: "Does stuff", img: logo, detail: "Does A. Does B. Solves problem X." },
     { "name": "Neat Test", description: "Very neat.", img: logo, detail: "Does A. Does B. Solves problem X." }
-    // TODO: add detailed_description field
 ];
 
 function project(n, setProjectIdx) {

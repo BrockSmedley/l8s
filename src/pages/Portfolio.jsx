@@ -4,6 +4,11 @@ import logo from '../logo.svg';
 
 const projects = [
     {
+        "name": "24HourStatus", description: "Project Management Website", img: logo,
+        detail: "Let your clients access & update projects without them having to register an account. Created for IRC RES LLC.",
+        href: "https://24hourstatus.com"
+    },
+    {
         "name": "CTRL API", description: "REST-based Blockchain API", img: logo,
         detail: "CTRL API is a REST API that acts as a CRUD database on Ethereum and IPFS. Created for VaaS Technologies, Inc.",
         href: "https://github.com/LedgerCTRL/ctrl-api-python"
@@ -13,10 +18,21 @@ const projects = [
         detail: "Fetches search results from Yelp and converts results into a CSV spreadsheet. Created for myofascialreleaser.com",
         href: "https://github.com/BrockSmedley/YelpCSV"
     },
-    { "name": "Something", description: "Does stuff", img: logo, detail: "Does A. Does B. Solves problem X.", href: "" },
-    { "name": "Something", description: "Does stuff", img: logo, detail: "Does A. Does B. Solves problem X.", href: "" },
-    { "name": "Something", description: "Does stuff", img: logo, detail: "Does A. Does B. Solves problem X.", href: "" },
-    { "name": "Neat Test", description: "Very neat.", img: logo, detail: "Does A. Does B. Solves problem X.", href: "" }
+    {
+        "name": "CWBY Coin", description: "Experimental Crypto Exchange & Marketplace", img: logo,
+        detail: "Purchase CWBY coins and spend them on merchandise in one site.",
+        href: "http://cwby.biz/"
+    },
+    {
+        "name": "xfinite", description: "Network Monitoring/Reporting Tool", img: logo,
+        detail: "Monitors network speed and tweets at your provider when it's below a threshold.",
+        href: "https://github.com/BrockSmedley/xfinite"
+    },
+    {
+        "name": "All My Code", description: "Hosted on GitHub", img: logo,
+        detail: "Check out all my public code repositories on GitHub.",
+        href: "https://github.com/BrockSmedley"
+    }
 ];
 
 function project(n, setProjectIdx) {

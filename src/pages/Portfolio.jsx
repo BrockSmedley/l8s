@@ -52,7 +52,7 @@ function project(n, setProjectIdx) {
             }}
         >
             <div className="uk-card-media-left uk-cover-container">
-                <img src={projects[n].img} alt={projects[n].name} uk-cover="true" />
+                <img src={projects[n].img} alt={projects[n].name} uk-cover="true" uk-img="true" />
                 <canvas width="400" height="350"></canvas>
             </div>
             <div>
@@ -62,7 +62,7 @@ function project(n, setProjectIdx) {
 
                     <div className="uk-grid uk-flex-center uk-grid-margin" uk-grid="true" style={{ padding: 32 }}>
                         {projects[n].tech.map((val, idx) => {
-                            return <span>{val}</span>;
+                            return <span key={idx}>{val}</span>;
                         })}
                     </div>
                 </div>

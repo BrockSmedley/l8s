@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Row from '../components/uikit/Row';
 import logo from '../logo.svg';
+import { service_development, service_consulting, service_teaching } from './Services';
 
 const brand = process.env.REACT_APP_TITLE;
 
@@ -10,10 +11,10 @@ const services = [
     { name: "Teaching", description: "We teach you how to build it." },
 ];
 
-function modalCard(service, setService) {
+function modalCard(service, setService, setModalView, children = null) {
     return (
         <div className="uk-card uk-card-body uk-link-heading" uk-toggle="target: #modal-id"
-            onClick={() => { setService(service); }}>
+            onClick={() => { setService(service); setModalView(children); }}>
             <h3 className="uk-card-title"><a href={`#?service=${service.name}`}>{service.name}</a></h3>
             <p>{service.description}</p>
         </div>
@@ -22,6 +23,7 @@ function modalCard(service, setService) {
 
 export default (props) => {
     let [service, setService] = useState("none");
+    let [modalView, setModalView] = useState(<></>);
 
     return (
         <>
@@ -31,13 +33,13 @@ export default (props) => {
             </header>
             <div className="uk-container uk-padding">
                 <Row cols={3}>
-                    {modalCard(services[0], setService)}
-                    {modalCard(services[1], setService)}
-                    {modalCard(services[2], setService)}
+                    {modalCard(services[0], setService, setModalView, service_development(props.giveMoney))}
+                    {modalCard(services[1], setService, setModalView, service_consulting(props.giveMoney))}
+                    {modalCard(services[2], setService, setModalView, service_teaching(props.giveMoney))}
                 </Row>
                 <Row cols={1}>
                     <div className="uk-card uk-card-body">
-                        <button className="uk-button uk-button-default" onClick={props.giveMoney}>Give me your money now.</button>
+                        <button className="uk-button uk-button-default" onClick={props.giveMoney}>Get a Quote</button>
                     </div>
                 </Row>
             </div>
@@ -48,7 +50,7 @@ export default (props) => {
                     <a href={`#?service=${service.name}`} target="_blank" rel="noopener noreferrer" title={`View ${service.name}`}>
                         <h2 className="uk-modal-title">{service.name}</h2>
                     </a>
-                    <p>{service.description}</p>
+                    {modalView}
                     <div>
                         <button className="uk-modal-close-default" type="button" uk-close="true"></button>
                     </div>

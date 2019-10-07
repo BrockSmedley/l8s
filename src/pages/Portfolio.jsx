@@ -25,7 +25,7 @@ const projects = [
         "name": "YelpCSV", description: "React-based Yelp scraper", img: "/img/yelpcsv.png",
         detail: "Fetches search results from Yelp and converts results into a CSV spreadsheet. Created for myofascialreleaser.com",
         href: "https://github.com/BrockSmedley/YelpCSV",
-        tech: ["react", "materialize", "js", "docker"]
+        tech: ["react", "materialize", "js", "docker", "yelp api"]
     },
     {
         "name": "CWBY Coin", description: "Experimental crypto exchange & marketplace", img: "/img/cwby.png",
@@ -37,13 +37,13 @@ const projects = [
         "name": "xfinite", description: "Network monitoring/reporting tool", img: "/img/xfinite.png",
         detail: "Monitors network speed and tweets at your provider when it's below a threshold.",
         href: "https://github.com/BrockSmedley/xfinite",
-        tech: ["python3", "twitter", "docker", "cron"]
+        tech: ["python3", "twitter api", "docker", "cron"]
     },
     {
         "name": "L8S Software Services", description: "This site.", img: logo,
         detail: "See the source code for the website you're viewing right now!",
         href: "https://github.com/BrockSmedley/smedley-consulting-portfolio",
-        tech: ["react", "uikit-css", "js", "heroku"]
+        tech: ["react", "uikit-css", "express.js", "js", "heroku"]
     }
 ];
 

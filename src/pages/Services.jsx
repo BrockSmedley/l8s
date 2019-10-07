@@ -5,14 +5,14 @@ class Service extends React.Component {
         return (
             <div className="uk-default">
                 {this.props.children}
-                <button className="uk-button uk-button-default">Get a quote.</button>
+                <button className="uk-button uk-button-default" onClick={this.props.action}>Get a Quote</button>
             </div>
         )
     }
 }
 
-function service_development() {
-    return <Service>
+function service_development(action) {
+    return <Service action={action}>
         <h5>Full Stack Development</h5>
         <p>We build your application from the ground up to give you more flexibility during development. We'll work with you to design a system that fits within your parameters. Any scale, any technology.</p>
         <h5>Best Practice Guarantee</h5>
@@ -23,8 +23,8 @@ function service_development() {
     </Service>;
 }
 
-function service_consulting() {
-    return <Service>
+function service_consulting(action) {
+    return <Service action={action}>
         <h5>Senior Consulting</h5>
         <p>Get strategic advice on software implementations, design, and business cases. Our consulting team consists only of senior developers, so you can rest assured you're getting good information.</p>
         <h5>Real World Advice</h5>
@@ -32,8 +32,8 @@ function service_consulting() {
     </Service>;
 }
 
-function service_teaching() {
-    return <Service>
+function service_teaching(action) {
+    return <Service action={action}>
         <h5>Learn from the Best</h5>
         <p>Get exclusive 1:1 lessons in any software environment you want to learn.</p>
         <h5>Anything Guarantee</h5>

@@ -33,13 +33,13 @@ export default (props) => {
             </header>
             <div className="uk-container uk-padding">
                 <Row cols={3}>
-                    {modalCard(services[0], setService, setModalView, service_development())}
-                    {modalCard(services[1], setService, setModalView, service_consulting())}
-                    {modalCard(services[2], setService, setModalView, service_teaching())}
+                    {modalCard(services[0], setService, setModalView, service_development(props.giveMoney))}
+                    {modalCard(services[1], setService, setModalView, service_consulting(props.giveMoney))}
+                    {modalCard(services[2], setService, setModalView, service_teaching(props.giveMoney))}
                 </Row>
                 <Row cols={1}>
                     <div className="uk-card uk-card-body">
-                        <button className="uk-button uk-button-default" onClick={props.giveMoney}>Give me your money now.</button>
+                        <button className="uk-button uk-button-default" onClick={props.giveMoney}>Get a Quote</button>
                     </div>
                 </Row>
             </div>

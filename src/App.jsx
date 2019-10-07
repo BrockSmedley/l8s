@@ -17,6 +17,7 @@ class App extends Component {
         this.componentDidMount = this.componentDidMount.bind(this);
     }
     giveMoney() {
+        window.location.assign('/contact');
         alert("Pls give money to " + process.env.REACT_APP_TITLE + ".");
     }
     setPage(page) {

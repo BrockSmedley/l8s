@@ -68,7 +68,7 @@ function project(n, setProjectIdx) {
 
                     <div className="uk-grid uk-flex-center uk-grid-margin" uk-grid="true" style={{ padding: 32 }}>
                         {projects[n].tech.map((val, idx) => {
-                            return <span key={idx}>{val}</span>;
+                            return <span className="uk-text-muted" key={idx}>{val}</span>;
                         })}
                     </div>
                 </div>

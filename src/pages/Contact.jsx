@@ -10,8 +10,23 @@ export default (props) => {
                 </div>
                 <div>
                     <div className="uk-card-body">
-                        <h3 className="uk-card-title">Get In Touch</h3>
-                        <p>Let's talk business.</p>
+                        <h3 className="uk-card-title">Let's talk business.</h3>
+                        <div className="uk-card uk-card-body uk-padding">
+                            {/* form */}
+                            <div className="uk-margin">
+                                <label htmlFor="email">Email address</label>
+                                <input className="uk-input" type="text" id="email" placeholder="your email address"></input>
+                            </div>
+                            <div className="uk-margin">
+                                <label htmlFor="message">Message</label>
+                                <textarea className="uk-textarea" rows="6" type="text" id="message" placeholder="Send a message..."></textarea>
+                            </div>
+                            <div className="uk-margin">
+                                <button className="uk-button uk-button-default">Send Message</button>
+                            </div>
+                        </div>
+
+                        <p>Questions, comments, concerns?</p>
                         <p>Send us an email: <a href="mailto:brock@smedleyconsulting.com">brock@smedleyconsulting.com</a></p>
                     </div>
                 </div>

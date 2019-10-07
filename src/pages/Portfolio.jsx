@@ -16,6 +16,12 @@ const projects = [
         tech: ["flask", "python3", "docker", "mongodb", "redis", "ethereum", "ipfs", "parity", "python"]
     },
     {
+        "name": "CTRL Frontend", description: "File storage site using CTRL API", img: "/img/ctrl-front.png",
+        detail: "Using the CTRL API, this site lets users create an account and store private files online in a decentralized environment.",
+        href: "https://github.com/BrockSmedley/ledgerCTRL-frontend",
+        tech: ["react", "js", "ipfs", "web3.js", "bootstrap"]
+    },
+    {
         "name": "YelpCSV", description: "React-based Yelp scraper", img: "/img/yelpcsv.png",
         detail: "Fetches search results from Yelp and converts results into a CSV spreadsheet. Created for myofascialreleaser.com",
         href: "https://github.com/BrockSmedley/YelpCSV",
@@ -25,7 +31,7 @@ const projects = [
         "name": "CWBY Coin", description: "Experimental crypto exchange & marketplace", img: "/img/cwby.png",
         detail: "Purchase CWBY coins and spend them on merchandise in one site.",
         href: "http://cwby.biz/",
-        tech: ["flask", "python3", "web3", "ethereum", "erc20", "stripe.js", "js"]
+        tech: ["flask", "python3", "web3.js", "web3.py", "ethereum", "erc20", "stripe.js", "js"]
     },
     {
         "name": "xfinite", description: "Network monitoring/reporting tool", img: "/img/xfinite.png",

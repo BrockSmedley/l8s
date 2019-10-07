@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import UIkit from 'uikit';
+
+const sendMessage = (email, message) => {
+    console.log(`Sending message from ${email}: ${message}`);
+}
 
 export default (props) => {
+    var [message, setMessage] = useState("");
+    var [email, setEmail] = useState("");
     return (
         <div className="uk-container uk-padding">
             <div className="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid="true">
@@ -15,14 +22,19 @@ export default (props) => {
                             {/* form */}
                             <div className="uk-margin">
                                 <label htmlFor="email">Email address</label>
-                                <input className="uk-input" type="text" id="email" placeholder="your email address"></input>
+                                <input className="uk-input" type="text" id="email" placeholder="your email address" onChange={(e) => setEmail(e.target.value)} value={email}></input>
                             </div>
                             <div className="uk-margin">
                                 <label htmlFor="message">Message</label>
-                                <textarea className="uk-textarea" rows="6" type="text" id="message" placeholder="Send a message..."></textarea>
+                                <textarea className="uk-textarea" rows="6" type="text" id="message" placeholder="Send a message..." onChange={(e) => setMessage(e.target.value)} value={message}></textarea>
                             </div>
                             <div className="uk-margin">
-                                <button className="uk-button uk-button-default">Send Message</button>
+                                <button className="uk-button uk-button-default" onClick={() => {
+                                    sendMessage(email, message);
+                                    setEmail("");
+                                    setMessage("");
+                                    UIkit.notification({ message: '<span uk-icon=\'icon: check\'></span> Message sent.', timeout: 3000 });
+                                }}>Send Message</button>
                             </div>
                         </div>
 
@@ -33,4 +45,4 @@ export default (props) => {
             </div>
         </div>
     )
-};
+}

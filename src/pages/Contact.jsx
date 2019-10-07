@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import UIkit from 'uikit';
+import axios from 'axios';
 
 const sendMessage = (email, message) => {
-    console.log(`Sending message from ${email}: ${message}`);
+    axios.post('/contact_send', {
+        email,
+        message
+    });
 }
 
 export default (props) => {

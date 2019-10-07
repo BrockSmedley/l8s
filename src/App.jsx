@@ -18,7 +18,6 @@ class App extends Component {
     }
     giveMoney() {
         window.location.assign('/contact');
-        alert("Pls give money to " + process.env.REACT_APP_TITLE + ".");
     }
     setPage(page) {
         this.setState({ page });

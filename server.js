@@ -18,14 +18,33 @@ app.get("/test", (req, res) => {
     res.send("happy easter");
 });
 
-app.post("/contact_send", (req, res) => {
-    // let message = req.body.message;
-    // let email = req.body.email;
-    let email = "test";
-    let message = "test";
-    console.log(req.body);
+app.post("/contact_send", async (req, res) => {
+    let email = req.body.email;
+    let message = req.body.message;
+    console.log(email, message);
 
-    res.send(email + " " + message);
+    let testAccount = await nodemailer.createTestAccount();
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            // TODO: use something more secure than an App password; set up OAuth
+            // user: process.env.EMAIL_USER,
+            // pass: process.env.EMAIL_PASS
+            user: testAccount.user,
+            pass: testAccount.pass
+        }
+    });
+    let info = await transporter.sendMail({
+        from: `"L8S Support" <${process.env.EMAIL_USER}>`,
+        to: 'brock@smedleyconsulting.com',
+        subject: `L8S Contact Form - ${email}`,
+        text: `from ${email}
+        
+        ${message}`
+    });
+    console.log("message sent: %s", info.messageId);
+
+    res.send("OK");
 });
 
 app.get("/*", function (req, res) {

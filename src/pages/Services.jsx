@@ -3,7 +3,10 @@ import React from 'react';
 class Service extends React.Component {
     render() {
         return (
-            <div className="uk-default">{this.props.children}</div>
+            <div className="uk-default">
+                {this.props.children}
+                <button className="uk-button uk-button-default">Get a quote.</button>
+            </div>
         )
     }
 }
@@ -20,4 +23,22 @@ function service_development() {
     </Service>;
 }
 
-export { Service, service_development };
+function service_consulting() {
+    return <Service>
+        <h5>Senior Consulting</h5>
+        <p>Get strategic advice on software implementations, design, and business cases. Our consulting team consists only of senior developers, so you can rest assured you're getting good information.</p>
+        <h5>Real World Advice</h5>
+        <p>Every one of our team members has years of experience in the corporate software world, so we know a thing or two. Previous employers include Intel, Daimler Trucks N.A, First Foundry, and Oregon State University.</p>
+    </Service>;
+}
+
+function service_teaching() {
+    return <Service>
+        <h5>Learn from the Best</h5>
+        <p>Get exclusive 1:1 lessons in any software environment you want to learn.</p>
+        <h5>Anything Guarantee</h5>
+        <p>If we don't know what you're trying to learn, we'll learn it. If you're not satisfied with your lesson, we'll issue you a full refund.</p>
+    </Service>;
+}
+
+export { Service, service_development, service_consulting, service_teaching };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Row from '../components/uikit/Row';
 import logo from '../logo.svg';
-import { service_development } from './Services';
+import { service_development, service_consulting, service_teaching } from './Services';
 
 const brand = process.env.REACT_APP_TITLE;
 
@@ -34,8 +34,8 @@ export default (props) => {
             <div className="uk-container uk-padding">
                 <Row cols={3}>
                     {modalCard(services[0], setService, setModalView, service_development())}
-                    {modalCard(services[1], setService, setModalView, <>description_2</>)}
-                    {modalCard(services[2], setService, setModalView, <>description_3</>)}
+                    {modalCard(services[1], setService, setModalView, service_consulting())}
+                    {modalCard(services[2], setService, setModalView, service_teaching())}
                 </Row>
                 <Row cols={1}>
                     <div className="uk-card uk-card-body">
@@ -50,7 +50,6 @@ export default (props) => {
                     <a href={`#?service=${service.name}`} target="_blank" rel="noopener noreferrer" title={`View ${service.name}`}>
                         <h2 className="uk-modal-title">{service.name}</h2>
                     </a>
-                    <p>{service.description}</p>
                     {modalView}
                     <div>
                         <button className="uk-modal-close-default" type="button" uk-close="true"></button>

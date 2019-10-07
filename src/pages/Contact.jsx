@@ -12,7 +12,7 @@ export default (props) => {
                 <div>
                     <div className="uk-card-body">
                         <h3 className="uk-card-title">Get In Touch</h3>
-                        <p>Questions, comments, concerns? Need something?</p>
+                        <p>Let's talk business.</p>
                         <p>Send us an email: <a href="mailto:brock@smedleyconsulting.com">brock@smedleyconsulting.com</a></p>
                     </div>
                 </div>

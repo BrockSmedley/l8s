@@ -7,7 +7,7 @@ const projects = [
         "name": "24HourStatus", description: "Project management website", img: "/img/24hs.png",
         detail: "Let your clients access & update projects without them having to register an account. Created for IRC RES LLC.",
         href: "https://24hourstatus.com",
-        tech: ["react", "bootstrap", "next.js", "express.js", "stripe.js", "docker", "mongodb", "aws-s3", "nginx", "js"]
+        tech: ["react", "materialize", "next.js", "express.js", "stripe.js", "docker", "mongodb", "aws-s3", "nginx", "js"]
     },
     {
         "name": "CTRL API", description: "REST-based blockchain API", img: "/img/ctrl.png",
@@ -19,7 +19,7 @@ const projects = [
         "name": "CTRL Frontend", description: "File storage site using CTRL API", img: "/img/ctrl-front.png",
         detail: "Using the CTRL API, this site lets users create an account and store private files online in a decentralized environment.",
         href: "https://github.com/BrockSmedley/ledgerCTRL-frontend",
-        tech: ["react", "js", "ipfs", "web3.js", "bootstrap"]
+        tech: ["react", "material-css", "web3.js", "bootstrap", "js"]
     },
     {
         "name": "YelpCSV", description: "React-based Yelp scraper", img: "/img/yelpcsv.png",
@@ -31,7 +31,7 @@ const projects = [
         "name": "CWBY Coin", description: "Experimental crypto exchange & marketplace", img: "/img/cwby.png",
         detail: "Purchase CWBY coins and spend them on merchandise in one site.",
         href: "http://cwby.biz/",
-        tech: ["flask", "python3", "web3.js", "web3.py", "ethereum", "erc20", "stripe.js", "js"]
+        tech: ["flask", "python3", "web3.js", "web3.py", "ethereum", "erc20", "stripe.js", "bootstrap", "js"]
     },
     {
         "name": "xfinite", description: "Network monitoring/reporting tool", img: "/img/xfinite.png",

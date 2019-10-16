@@ -27,11 +27,12 @@ app.post("/contact_send", async (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            // TODO: use something more secure than an App password; set up OAuth
-            // user: process.env.EMAIL_USER,
-            // pass: process.env.EMAIL_PASS
-            user: testAccount.user,
-            pass: testAccount.pass
+            type: 'oauth2',
+            user: process.env.EMAIL_USER,
+            clientId: process.env.EMAIL_CLIENT_ID,
+            clientSecret: process.env.EMAIL_CLIENT_SECRET,
+            refreshToken: process.env.EMAIL_REFRESH_TOKEN,
+            accessToken: process.env.EMAIL_ACCESS_TOKEN
         }
     });
     let info = await transporter.sendMail({

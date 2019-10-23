@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Row from '../components/uikit/Row';
-import logo from '../logo.svg';
+import logo from '../logo-black.png';
 
 const projects = [
     {
@@ -30,7 +30,7 @@ const projects = [
     {
         "name": "CWBY Coin", description: "Experimental crypto exchange & marketplace", img: "/img/cwby.png",
         detail: "Purchase CWBY coins and spend them on merchandise in one site.",
-        href: "http://cwby.biz/",
+        href: "#",
         tech: ["flask", "python3", "web3.js", "web3.py", "ethereum", "erc20", "stripe.js", "bootstrap", "js"]
     },
     {
@@ -40,7 +40,7 @@ const projects = [
         tech: ["python3", "twitter api", "docker", "cron"]
     },
     {
-        "name": "L8S Software Services", description: "This site.", img: logo,
+        "name": "L8S Software", description: "This site.", img: logo,
         detail: "See the source code for the website you're viewing right now!",
         href: "https://github.com/BrockSmedley/smedley-consulting-portfolio",
         tech: ["react", "uikit-css", "express.js", "js", "heroku"]

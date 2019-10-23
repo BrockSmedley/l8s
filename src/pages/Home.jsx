@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Row from '../components/uikit/Row';
-import logo from '../logo.svg';
+import logo from '../logo.png';
 import { service_development, service_consulting, service_teaching } from './Services';
 
 const brand = process.env.REACT_APP_TITLE;
@@ -29,7 +29,6 @@ export default (props) => {
         <>
             <header className="App-header" style={{ marginTop: -80 }}>
                 <img src={logo} className="App-logo" alt="logo" />
-                <p>{brand}</p>
             </header>
             <div className="uk-container uk-padding">
                 <Row cols={3}>

@@ -49,7 +49,7 @@ const projects = [
 
 function project(n, setProjectIdx) {
     return (
-        <div className="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid="true"
+        <div className="uk-card uk-card-default uk-grid-collapse uk-child-width-1-1@s uk-child-width-1-2@m uk-margin" uk-grid="true"
             key={n}
             style={{ width: "100%" }}
             uk-toggle="target: #project-id"
@@ -61,16 +61,15 @@ function project(n, setProjectIdx) {
                 <img src={projects[n].img} alt={projects[n].name} uk-cover="true" uk-img="true" />
                 <canvas width="400" height="350"></canvas>
             </div>
-            <div>
-                <div className="uk-card-body uk-link-heading">
-                    <h3 className="uk-card-title"><a href={`#?p=${n}`}>{projects[n].name}</a></h3>
-                    <p>{projects[n].description}</p>
 
-                    <div className="uk-grid uk-flex-center uk-grid-margin" uk-grid="true" style={{ padding: 32 }}>
-                        {projects[n].tech.map((val, idx) => {
-                            return <span className="uk-text-muted" key={idx}>{val}</span>;
-                        })}
-                    </div>
+            <div className="uk-card-body uk-link-heading">
+                <h3 className="uk-card-title"><a href={`#?p=${n}`}>{projects[n].name}</a></h3>
+                <p>{projects[n].description}</p>
+
+                <div className="uk-grid uk-flex-center uk-grid-margin" uk-grid="true" style={{ padding: 32 }}>
+                    {projects[n].tech.map((val, idx) => {
+                        return <span className="uk-text-muted" key={idx}>{val}</span>;
+                    })}
                 </div>
             </div>
         </div >
@@ -82,7 +81,7 @@ export default (props) => {
 
     return (
         <div className="uk-container uk-padding">
-            <div className="uk-grid" uk-grid="true">
+            <div>
                 {
                     projects.map((val, idx) => {
                         return project(idx, setProjectIdx);
@@ -96,7 +95,7 @@ export default (props) => {
                     <a href={projects[projectIdx].href} target="_blank" rel="noopener noreferrer" title={`View ${projects[projectIdx].name}`}>
                         <h2 className="uk-modal-title">{projects[projectIdx].name}</h2>
                     </a>
-                    <Row cols={2}>
+                    <Row s={2}>
                         <a href={projects[projectIdx].href} target="_blank" rel="noopener noreferrer">
                             <img src={projects[projectIdx].img} alt={projects[projectIdx].name} title={`View ${projects[projectIdx].name}`} />
                         </a>

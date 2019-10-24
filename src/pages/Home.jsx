@@ -31,12 +31,12 @@ export default (props) => {
                 <img src={logo} className="App-logo" alt="logo" />
             </header>
             <div className="uk-container uk-padding">
-                <Row cols={3}>
+                <Row m={3} s={1}>
                     {modalCard(services[0], setService, setModalView, service_development(props.giveMoney))}
                     {modalCard(services[1], setService, setModalView, service_consulting(props.giveMoney))}
                     {modalCard(services[2], setService, setModalView, service_teaching(props.giveMoney))}
                 </Row>
-                <Row cols={1}>
+                <Row s={1}>
                     <div className="uk-card uk-card-body">
                         <button className="uk-button uk-button-default" onClick={props.giveMoney}>Get a Quote</button>
                     </div>

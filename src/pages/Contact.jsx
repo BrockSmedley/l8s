@@ -26,7 +26,7 @@ export default (props) => {
                             {/* form */}
                             <div className="uk-margin">
                                 <label htmlFor="email">Email address</label>
-                                <input className="uk-input" type="text" id="email" placeholder="your email address" onChange={(e) => setEmail(e.target.value)} value={email}></input>
+                                <input className="uk-input" type="text" id="email" name="email" placeholder="your email address" onChange={(e) => setEmail(e.target.value)} value={email}></input>
                             </div>
                             <div className="uk-margin">
                                 <label htmlFor="message">Message</label>

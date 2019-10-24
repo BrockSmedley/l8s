@@ -7,31 +7,31 @@ const projects = [
         "name": "24HourStatus", description: "Project management website", img: "/img/24hs.png",
         detail: "Let your clients access & update projects without them having to register an account. Created for IRC RES LLC.",
         href: "https://24hourstatus.com",
-        tech: ["react", "materialize", "next.js", "express.js", "stripe.js", "docker", "mongodb", "aws-s3", "nginx", "js"]
+        tech: ["react", "materialize", "next.js", "express.js", "stripe.js", "docker", "mongodb", "aws-s3", "nginx", "javascript"]
     },
     {
         "name": "CTRL API", description: "REST-based blockchain API", img: "/img/ctrl.png",
         detail: "CTRL API is a REST API that acts as a CRUD database on Ethereum and IPFS. Created for VaaS Technologies, Inc.",
         href: "https://github.com/LedgerCTRL/ctrl-api-python",
-        tech: ["flask", "python3", "docker", "mongodb", "redis", "ethereum", "ipfs", "parity", "python"]
+        tech: ["flask", "python3", "docker", "mongodb", "redis", "ethereum", "web3.py", "ipfs", "parity"]
     },
     {
         "name": "CTRL Frontend", description: "File storage site using CTRL API", img: "/img/ctrl-front.png",
         detail: "Using the CTRL API, this site lets users create an account and store private files online in a decentralized environment.",
         href: "https://github.com/BrockSmedley/ledgerCTRL-frontend",
-        tech: ["react", "material-css", "web3.js", "bootstrap", "js"]
+        tech: ["react", "material-css", "javascript"]
     },
     {
         "name": "YelpCSV", description: "React-based Yelp scraper", img: "/img/yelpcsv.png",
         detail: "Fetches search results from Yelp and converts results into a CSV spreadsheet. Created for myofascialreleaser.com",
         href: "https://github.com/BrockSmedley/YelpCSV",
-        tech: ["react", "materialize", "js", "docker", "yelp api"]
+        tech: ["react", "materialize", "javascript", "docker", "yelp api"]
     },
     {
         "name": "CWBY Coin", description: "Experimental crypto exchange & marketplace", img: "/img/cwby.png",
         detail: "Purchase CWBY coins and spend them on merchandise in one site.",
         href: "#",
-        tech: ["flask", "python3", "web3.js", "web3.py", "ethereum", "erc20", "stripe.js", "bootstrap", "js"]
+        tech: ["flask", "python3", "web3.js", "web3.py", "ethereum", "erc20", "stripe.js", "bootstrap", "javascript"]
     },
     {
         "name": "xfinite", description: "Network monitoring/reporting tool", img: "/img/xfinite.png",
@@ -43,7 +43,7 @@ const projects = [
         "name": "L8S Software", description: "This site.", img: logo,
         detail: "See the source code for the website you're viewing right now!",
         href: "https://github.com/BrockSmedley/smedley-consulting-portfolio",
-        tech: ["react", "uikit-css", "express.js", "js", "heroku"]
+        tech: ["react", "uikit-css", "express.js", "javascript", "heroku"]
     }
 ];
 

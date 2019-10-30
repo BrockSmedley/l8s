@@ -49,7 +49,7 @@ app.post("/contact_send", async (req, res) => {
 });
 
 // letsencrypt challenge
-app.get("/eJ1QxCz7rjx6ELcYpAGRIA1k6n-U9TTe0G15qzt5vt0", (req, res) => {
+app.get("/.well-known/acme-challenge/eJ1QxCz7rjx6ELcYpAGRIA1k6n-U9TTe0G15qzt5vt0", (req, res) => {
     res.send("eJ1QxCz7rjx6ELcYpAGRIA1k6n-U9TTe0G15qzt5vt0.iizUDeTa2WBcaE7ywAB0lwYV3yGKMXudAYpPLpLQXkE");
 })
 

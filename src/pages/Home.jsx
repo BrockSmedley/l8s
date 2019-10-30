@@ -28,7 +28,7 @@ export default (props) => {
     return (
         <>
             <header className="App-header" style={{ marginTop: -80 }}>
-                <img src={logo} className="App-logo" alt="logo" />
+                <img src={logo} className="App-logo animated jackInTheBox" alt="logo" />
             </header>
             <div className="uk-container uk-padding">
                 <Row m={3} s={1}>

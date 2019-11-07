@@ -5,7 +5,7 @@ import { Navbar, PagePath } from './components/Navbar';
 import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
-require('dotenv').config();
+import Admin from './pages/Admin';
 
 class App extends Component {
     constructor(props) {
@@ -17,7 +17,7 @@ class App extends Component {
         this.componentDidMount = this.componentDidMount.bind(this);
     }
     giveMoney() {
-        window.location.assign('/contact');
+        window.location.assign('/contact'); // TODO: should this be replaced??
     }
     setPage(page) {
         this.setState({ page });
@@ -34,6 +34,7 @@ class App extends Component {
                         <Switch>
                             <Route path={PagePath.Portfolio} component={Portfolio} />
                             <Route path={PagePath.Contact} component={Contact} />
+                            <Route path={process.env.REACT_APP_ADMIN_URL} component={Admin} />
                             <Route path={PagePath.Home}>
                                 <Home giveMoney={this.giveMoney} />
                             </Route>

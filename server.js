@@ -3,9 +3,10 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const nodemailer = require('nodemailer');
 var mongoose = require('mongoose');
+var blogRouter = require('./src/api/routes/blog');
+
 require('dotenv').config();
 console.log(process.env);
-var BlogPost = require('./src/api/schemas/BlogPost').BlogPost;
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true
@@ -67,6 +68,8 @@ app.post("/login", (req, res) => {
         res.status(401).send("NO DICE BABY");
     }
 })
+
+app.use("/blog", blogRouter);
 
 // letsencrypt challenge
 app.get("/.well-known/acme-challenge/eJ1QxCz7rjx6ELcYpAGRIA1k6n-U9TTe0G15qzt5vt0", (req, res) => {

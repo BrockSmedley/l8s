@@ -47,7 +47,13 @@ router.get('/', (req, res) => {
 // retrieve blog post
 router.get('/:id', (req, res) => {
     console.log(req.params);
-    res.send("SINGLE BLOG POST"); // TODO: CHANEG ME
+    BlogPost.findOne({
+        uid: req.params.id
+    }, (err, post) => {
+        if (err) return error(err, res);
+        if (!post) return res.status(404).send(`post '${req.params.id}' not found`);
+        res.send(post);
+    });
 });
 
 module.exports = router;

@@ -9,7 +9,6 @@ function error(err, res) {
 
 // create/update blog post
 router.post('/', (req, res) => {
-    console.log(req.body);
     if (!req.body.body || !req.body.title || !req.body.uid) {
         return res.status(406).send("invalid params");
     }
@@ -55,5 +54,15 @@ router.get('/:id', (req, res) => {
         res.send(post);
     });
 });
+
+// delete a blog post
+router.delete('/:id', (req, res) => {
+    BlogPost.findOneAndDelete({
+        uid: req.params.id
+    }, (err, result) => {
+        if (err) return error(err, res);
+        res.send(result);
+    })
+})
 
 module.exports = router;

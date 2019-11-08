@@ -2,7 +2,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const nodemailer = require('nodemailer');
+var mongoose = require('mongoose');
 require('dotenv').config();
+
+mongoose.connect(process.env.MONGOOSE_URL, {
+    useNewUrlParser: true
+});
 
 console.log(process.env);
 

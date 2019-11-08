@@ -5,7 +5,7 @@ const nodemailer = require('nodemailer');
 var mongoose = require('mongoose');
 require('dotenv').config();
 
-mongoose.connect(process.env.MONGOOSE_URL, {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true
 });
 

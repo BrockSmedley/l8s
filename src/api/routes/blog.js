@@ -2,6 +2,11 @@ var express = require('express');
 var router = express.Router();
 var BlogPost = require('../schemas/BlogPost').BlogPost;
 
+function error(err, res) {
+    console.error(err);
+    return res.status(400).send(err);
+}
+
 // create/update blog post
 router.post('/', (req, res) => {
     console.log(req.body);
@@ -17,10 +22,7 @@ router.post('/', (req, res) => {
     BlogPost.findOne({
         uid: req.body.uid
     }, (err, post) => {
-        if (err) {
-            console.error(err);
-            return res.status(400).send(err);
-        }
+        if (err) return error(err, res);
         if (post) {
             // update
             console.log("updating existing post", post.uid);
@@ -36,9 +38,11 @@ router.post('/', (req, res) => {
 
 // retrieve all posts
 router.get('/', (req, res) => {
-    console.log("GETTING POSTS");
-    res.send("ALL BLOG POSTS"); // TODO: CHANEG ME
-})
+    BlogPost.find((err, posts) => {
+        if (err) return error(err, res);
+        res.send(posts);
+    });
+});
 
 // retrieve blog post
 router.get('/:id', (req, res) => {

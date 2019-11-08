@@ -23,6 +23,7 @@ router.post('/', (req, res) => {
         }
         if (post) {
             // update
+            console.log("updating existing post", post.uid);
             post.overwrite(blogpost).save();
         } else {
             // save new post

@@ -4,12 +4,17 @@ const path = require("path");
 const nodemailer = require('nodemailer');
 var mongoose = require('mongoose');
 require('dotenv').config();
+console.log(process.env);
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true
 });
 
-console.log(process.env);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'mongoose connection error'));
+db.once('open', () => {
+    console.log("Mongoose connected to MongoDB Atlas.");
+});
 
 const app = express();
 

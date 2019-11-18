@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import useAxios from 'axios-hooks';
-import { type } from 'os';
 
 // blog page
 export default () => {
@@ -22,8 +21,8 @@ export default () => {
             getData.map((val, idx, arr) => {
                 if (val.published) {
                     return <div key={idx}>
-                        <p>{val.title}</p>
-                        <p>{val.body}</p>
+                        <h3>{val.title}</h3>
+                        <div dangerouslySetInnerHTML={{ __html: val.body }} />
                     </div>;
                 }
             })

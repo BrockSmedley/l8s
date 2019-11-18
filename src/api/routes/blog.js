@@ -15,7 +15,8 @@ router.post('/', (req, res) => {
     let blogpost = new BlogPost({
         uid: req.body.uid,
         title: req.body.title,
-        body: req.body.body
+        body: req.body.body,
+        published: req.body.published
     });
 
     BlogPost.findOne({

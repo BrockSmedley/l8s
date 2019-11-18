@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useAxios from 'axios-hooks';
+import { type } from 'os';
 
 // blog page
 export default () => {
@@ -19,10 +20,12 @@ export default () => {
         <pre>{
             // JSON.stringify(getData, null, 2)
             getData.map((val, idx, arr) => {
-                return <div>
-                    <p>{val.title}</p>
-                    <p>{val.body}</p>
-                </div>;
+                if (val.published) {
+                    return <div key={idx}>
+                        <p>{val.title}</p>
+                        <p>{val.body}</p>
+                    </div>;
+                }
             })
         }</pre>
     </>;

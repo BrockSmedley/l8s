@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Admin from './pages/Admin';
+import Blog from './pages/Blog';
 
 class App extends Component {
     constructor(props) {
@@ -34,6 +35,7 @@ class App extends Component {
                         <Switch>
                             <Route path={PagePath.Portfolio} component={Portfolio} />
                             <Route path={PagePath.Contact} component={Contact} />
+                            <Route path={PagePath.Blog} component={Blog} />
                             <Route path={process.env.REACT_APP_ADMIN_URL} component={Admin} />
                             <Route path={PagePath.Home}>
                                 <Home giveMoney={this.giveMoney} />

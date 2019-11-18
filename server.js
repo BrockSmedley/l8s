@@ -39,7 +39,9 @@ app.post("/login", (req, res) => {
     }
 })
 
-app.use("/blog", blogRouter);
+// blog endpoints
+// TODO: RESTRICT W/ ADMIN_PASS
+app.use("/blogpost", blogRouter);
 
 // letsencrypt challenge
 app.get("/.well-known/acme-challenge/eJ1QxCz7rjx6ELcYpAGRIA1k6n-U9TTe0G15qzt5vt0", (req, res) => {

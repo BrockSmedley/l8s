@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 const PagePath = {
     Contact: '/contact',
     Home: '/',
-    Portfolio: '/portfolio'
+    Portfolio: '/portfolio',
+    Blog: '/blog'
 };
 
 function click(props, page) {
@@ -25,6 +26,7 @@ function Navbar(props) {
                     {HLink(PagePath.Home, "Home", props)}
                     {HLink(PagePath.Portfolio, "Portfolio", props)}
                     {HLink(PagePath.Contact, "Contact", props)}
+                    {HLink(PagePath.Blog, "Blog", props)}
                 </ul>
             </div>
         </nav>

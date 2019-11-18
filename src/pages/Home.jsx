@@ -3,8 +3,6 @@ import Row from '../components/uikit/Row';
 import logo from '../logo.png';
 import { service_development, service_consulting, service_teaching } from './Services';
 
-const brand = process.env.REACT_APP_TITLE;
-
 const services = [
     { name: "Development", description: "We build it for you." },
     { name: "Consulting", description: "We help you get it built." },

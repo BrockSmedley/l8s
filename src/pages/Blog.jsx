@@ -21,7 +21,7 @@ export default () => {
             getData.map((val, idx, arr) => {
                 if (val.published) {
                     return <div key={idx}>
-                        <h3>{val.title}</h3>
+                        <h1>{val.title}</h1>
                         <div dangerouslySetInnerHTML={{ __html: val.body }} />
                     </div>;
                 }

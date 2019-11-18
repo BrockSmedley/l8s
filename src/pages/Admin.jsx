@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RichTextEditor from 'react-rte';
 import uuid from 'uuidv4';
+import axios from 'axios';
 
 class Editor extends Component {
     static propTypes = {
@@ -9,11 +10,11 @@ class Editor extends Component {
         onChangeTitle: PropTypes.func,
         onBlur: PropTypes.func
     };
-    id = uuid();
 
     state = {
         value: RichTextEditor.createEmptyValue(),
-        title: ""
+        title: "",
+        id: uuid()
     }
 
     onChange = (value) => {
@@ -32,20 +33,42 @@ class Editor extends Component {
     onChangeTitle = (e) => {
         this.setState({ title: e.target.value });
     };
+
     trimValue(value) {
         return value.replace(/[\r\n]+/gm, "")
     }
+
+    formatValue(value) {
+        return (this.trimValue(value.toString('html'))).toString();
+    }
+
     onBlur = () => {
+        let body = this.formatValue(this.state.value);
         // save state to DB if there's a title and some content
-        if (this.state.title && this.state.value && (this.trimValue(this.state.value.toString('markdown'))).toString().length > 1) {
-            console.log(
-                (this.trimValue(this.state.value.toString('markdown'))).toString().length
-            );
-            console.log(`saving to DB ${this.id}`);
+        if (this.state.title && this.state.value && body.length > 1) {
+            console.log(body.length);
+            console.log(`saving to DB ${this.state.id}`);
+            this.save(body, false);
         }
         else {
             console.log("empty... not saving.");
         }
+    };
+
+    save = (body, published) => {
+        // save post to DB
+        axios.post('http://localhost:8080/blogpost', {
+            uid: this.state.id,
+            title: this.state.title,
+            body,
+            published,
+        });
+    };
+
+    publish = () => {
+        // publish post
+        let body = this.formatValue(this.state.value);
+        this.save(body, true);
     };
 
     render() {
@@ -57,6 +80,7 @@ class Editor extends Component {
                     onChange={this.onChange}
                     onBlur={this.onBlur}
                 />
+                <button onClick={this.publish}>PUBLISH</button>
             </div>
         );
     }

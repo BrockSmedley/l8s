@@ -12,11 +12,14 @@ router.post('/', (req, res) => {
     if (!req.body.body || !req.body.title || !req.body.uid) {
         return res.status(406).send("invalid params");
     }
+    let d = new Date();
+    let now = d.getTime();
     let blogpost = new BlogPost({
         uid: req.body.uid,
         title: req.body.title,
         body: req.body.body,
-        published: req.body.published
+        published: req.body.published,
+        date_added: now
     });
 
     BlogPost.findOne({
@@ -38,7 +41,12 @@ router.post('/', (req, res) => {
 
 // retrieve all posts
 router.get('/', (req, res) => {
-    BlogPost.find((err, posts) => {
+    BlogPost.find({}, null, {
+        skip: 0,
+        sort: {
+            date_added: -1
+        }
+    }, (err, posts) => {
         if (err) return error(err, res);
         res.send(posts);
     });

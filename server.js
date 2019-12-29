@@ -24,8 +24,7 @@ const app = express();
 
 // enable CORS (all origins -- TODO: only enable on public-facing endpoints; restrict POST access to /blog)
 var corsOptions = {
-    // origin: 'https://www.l8s.co',
-    origin: 'http://localhost:8080',
+    origin: 'https://www.l8s.co',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 app.use(cors(corsOptions));

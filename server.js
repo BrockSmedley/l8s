@@ -23,7 +23,11 @@ db.once('open', () => {
 const app = express();
 
 // enable CORS (all origins -- TODO: only enable on public-facing endpoints; restrict POST access to /blog)
-app.use(cors());
+var corsOptions = {
+    origin: 'https://www.l8s.co',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
 
 // serve static files thru express
 app.use(express.static(path.join(__dirname, "build")));

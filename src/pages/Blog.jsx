@@ -4,7 +4,7 @@ import useAxios from 'axios-hooks';
 // blog page
 export default () => {
     const [{ data: getData, loading: getLoading, error: getError }] = useAxios(
-        'http://localhost:8080/blogpost'
+        process.env.NODE_ENV == "development" ? 'http://localhost:8080/blogpost' : 'https://www.l8s.co/blogpost'
     );
 
     if (getLoading) return <>Loading...</>;

@@ -16,7 +16,7 @@ export default () => {
     </>;
 
     return <>
-        <div>
+        <div style={{ paddingTop: 20 }}>
             <strong>Notice</strong>
             <p>
                 <em>I'm posting my progress as I build this blog.

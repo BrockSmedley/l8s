@@ -54,7 +54,7 @@ app.post("/login", (req, res) => {
 
 // blog endpoints
 // TODO: RESTRICT W/ ADMIN_PASS
-app.use("/blogpost", blogRouter);
+// app.use("/blogpost", blogRouter); // commenting out until I build in access restrictions
 
 app.get("/*", function (req, res) {
     res.sendFile(path.join(__dirname, "build", "index.html"));

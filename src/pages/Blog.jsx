@@ -20,7 +20,7 @@ export default () => {
             // JSON.stringify(getData, null, 2)
             getData.map((val, idx, arr) => {
                 if (val.published) {
-                    return <div key={idx}>
+                    return <div key={idx} style={{ margin: "auto", width: "800px" }}>
                         <h1>{val.title}</h1>
                         <div dangerouslySetInnerHTML={{ __html: val.body }} />
                     </div>;

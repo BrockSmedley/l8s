@@ -35,3 +35,9 @@
 a {
   color: #dd6b00;
 }
+
+p,
+li {
+  word-break: normal;
+  white-space: normal;
+}

@@ -16,6 +16,15 @@ export default () => {
     </>;
 
     return <>
+        <div>
+            <strong>Notice</strong>
+            <p>
+                <em>I'm posting my progress as I build this blog.
+                    <br />Expect it to look a little off for a while.
+                    <br />Expect short bursts of loosely related content.
+                    <br />Thanks for reading!</em>
+            </p>
+        </div>
         <pre>{
             // JSON.stringify(getData, null, 2)
             getData.map((val, idx, arr) => {

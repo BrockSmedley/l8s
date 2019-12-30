@@ -8,36 +8,36 @@ function error(err, res) {
 }
 
 // create/update blog post
-router.post('/', (req, res) => {
-    if (!req.body.body || !req.body.title || !req.body.uid) {
-        return res.status(406).send("invalid params");
-    }
-    let d = new Date();
-    let now = d.getTime();
-    let blogpost = new BlogPost({
-        uid: req.body.uid,
-        title: req.body.title,
-        body: req.body.body,
-        published: req.body.published,
-        date_added: now
-    });
+// router.post('/', (req, res) => {
+//     if (!req.body.body || !req.body.title || !req.body.uid) {
+//         return res.status(406).send("invalid params");
+//     }
+//     let d = new Date();
+//     let now = d.getTime();
+//     let blogpost = new BlogPost({
+//         uid: req.body.uid,
+//         title: req.body.title,
+//         body: req.body.body,
+//         published: req.body.published,
+//         date_added: now
+//     });
 
-    BlogPost.findOne({
-        uid: req.body.uid
-    }, (err, post) => {
-        if (err) return error(err, res);
-        if (post) {
-            // update
-            console.log("updating existing post", post.uid);
-            post.overwrite(blogpost).save();
-        } else {
-            // save new post
-            blogpost.save();
-        }
+//     BlogPost.findOne({
+//         uid: req.body.uid
+//     }, (err, post) => {
+//         if (err) return error(err, res);
+//         if (post) {
+//             // update
+//             console.log("updating existing post", post.uid);
+//             post.overwrite(blogpost).save();
+//         } else {
+//             // save new post
+//             blogpost.save();
+//         }
 
-        res.send(blogpost);
-    });
-});
+//         res.send(blogpost);
+//     });
+// });
 
 // retrieve all posts
 router.get('/', (req, res) => {
@@ -65,13 +65,13 @@ router.get('/:id', (req, res) => {
 });
 
 // delete a blog post
-router.delete('/:id', (req, res) => {
-    BlogPost.findOneAndDelete({
-        uid: req.params.id
-    }, (err, result) => {
-        if (err) return error(err, res);
-        res.send(result);
-    })
-})
+// router.delete('/:id', (req, res) => {
+//     BlogPost.findOneAndDelete({
+//         uid: req.params.id
+//     }, (err, result) => {
+//         if (err) return error(err, res);
+//         res.send(result);
+//     })
+// });
 
 module.exports = router;

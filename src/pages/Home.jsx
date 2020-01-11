@@ -22,12 +22,41 @@ function modalCard(service, setService, setModalView, children = null) {
 export default (props) => {
     let [service, setService] = useState("none");
     let [modalView, setModalView] = useState(<></>);
+    let techs = [
+        "full stack",
+        "blockchain",
+        "smart contracts",
+        "cryptocurrency",
+        "decentralized & distributed computing",
+        "cloud",
+        "aws",
+        "kubernetes",
+        "terraform",
+        "puppet",
+        "devops",
+        "machine learning",
+        "frontend",
+        "backend",
+        "integrated systems",
+        "UX/UI",
+        "load testing",
+        "CI/CD",
+    ];
 
     return (
         <>
             <header className="App-header" style={{ marginTop: -80 }}>
                 <img src={logo} className="App-logo animated jackInTheBox" alt="logo" />
             </header>
+            <div className="uk-container">
+                <div className="uk-grid uk-flex-center uk-grid-margin" uk-grid="true" style={{ padding: 32 }}>
+                    {
+                        techs.map((val, idx, arr) => {
+                            return <span className="uk-text-muted" key={idx}>{val}</span>;
+                        })
+                    }
+                </div>
+            </div>
             <div className="uk-container uk-padding">
                 <Row m={3} s={1}>
                     {modalCard(services[0], setService, setModalView, service_development(props.giveMoney))}

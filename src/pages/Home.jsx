@@ -31,7 +31,7 @@ export default (props) => {
         "cloud",
         "aws",
         "kubernetes",
-        "terraform",
+        "helm",
         "puppet",
         "devops",
         "machine learning",

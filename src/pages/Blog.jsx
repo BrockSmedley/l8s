@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useAxios from 'axios-hooks';
 
 // blog page
 export default () => {
     const [{ data: getData, loading: getLoading, error: getError }] = useAxios(
-        process.env.NODE_ENV == "development" ? 'http://localhost:8080/blogpost' : 'https://www.l8s.co/blogpost'
+        process.env.NODE_ENV === "development" ? 'http://localhost:8080/blogpost' : 'https://www.l8s.co/blogpost'
     );
 
     if (getLoading) return <>Loading...</>;
@@ -33,6 +33,9 @@ export default () => {
                         <h1>{val.title}</h1>
                         <div dangerouslySetInnerHTML={{ __html: val.body }} />
                     </div>;
+                }
+                else {
+                    return null;
                 }
             })
         }</pre>

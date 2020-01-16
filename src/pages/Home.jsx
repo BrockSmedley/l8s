@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Row from '../components/uikit/Row';
 import logo from '../logo.png';
 import { service_development, service_consulting, service_teaching } from './Services';
 
@@ -11,7 +10,7 @@ const services = [
 
 function modalCard(service, setService, setModalView, children = null) {
     return (
-        <div className="uk-card uk-card-body uk-link-heading" uk-toggle="target: #modal-id"
+        <div className="uk-card uk-card-body uk-card-hover uk-link-heading" uk-toggle="target: #modal-id"
             onClick={() => { setService(service); setModalView(children); }}>
             <h3 className="uk-card-title"><a href={`#?service=${service.name}`}>{service.name}</a></h3>
             <p>{service.description}</p>
@@ -57,17 +56,19 @@ export default (props) => {
                     }
                 </div>
             </div>
-            <div className="uk-container uk-padding">
-                <Row m={3} s={1}>
-                    {modalCard(services[0], setService, setModalView, service_development(props.giveMoney))}
-                    {modalCard(services[1], setService, setModalView, service_consulting(props.giveMoney))}
-                    {modalCard(services[2], setService, setModalView, service_teaching(props.giveMoney))}
-                </Row>
-                <Row s={1}>
-                    <div className="uk-card uk-card-body">
-                        <button className="uk-button uk-button-default" onClick={props.giveMoney}>Get a Quote</button>
+            <div className="uk-container">
+                <div className="uk-section">
+                    <div className="uk-grid-match uk-child-width-1-3@m" uk-grid="true" style={{ paddingLeft: 40 }}>
+                        {modalCard(services[0], setService, setModalView, service_development(props.giveMoney))}
+                        {modalCard(services[1], setService, setModalView, service_consulting(props.giveMoney))}
+                        {modalCard(services[2], setService, setModalView, service_teaching(props.giveMoney))}
                     </div>
-                </Row>
+                </div>
+
+                <div className="uk-card uk-card-body">
+                    <button className="uk-button uk-button-default" onClick={props.giveMoney}>Get a Quote</button>
+                </div>
+
             </div>
 
             {/* modal */}

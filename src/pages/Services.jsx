@@ -28,7 +28,7 @@ function service_consulting(action) {
         <h5>Senior Consulting</h5>
         <p>Get strategic advice on software implementations, design, and business cases. Our consulting team consists only of senior developers, so you can rest assured you're getting good information.</p>
         <h5>Real World Advice</h5>
-        <p>Every one of our team members has years of experience in the corporate software world, so we know a thing or two. Previous employers include Intel, Daimler Trucks N.A, First Foundry, and Oregon State University.</p>
+        <p>Every one of our team members has years of experience in the corporate software world, so we know a thing or two. Previous employers include <a href="https://intel.com" target="_blank" rel="noopener noreferrer">Intel</a>, <a href="https://daimler-trucksnorthamerica.com" target="_blank" rel="noopener noreferrer">Daimler Trucks N.A</a>, <a href="https://www.firstfoundry.co/" target="_blank" rel="noopener noreferrer">First Foundry</a>, and <a href="https://is.oregonstate.edu/service-desk" target="_blank" rel="noopener noreferrer">Oregon State University IT</a>.</p>
     </Service>;
 }
 

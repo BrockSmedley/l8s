@@ -22,24 +22,17 @@ export default (props) => {
     let [service, setService] = useState("none");
     let [modalView, setModalView] = useState(<></>);
     let techs = [
-        "full stack",
         "blockchain",
         "smart contracts",
         "cryptocurrency",
-        "decentralized & distributed computing",
+        "ethereum",
+        "web3",
         "cloud",
         "aws",
         "kubernetes",
         "helm",
-        "puppet",
         "devops",
-        "machine learning",
-        "frontend",
-        "backend",
-        "integrated systems",
-        "UX/UI",
-        "load testing",
-        "CI/CD",
+        "full stack web",
     ];
 
     return (

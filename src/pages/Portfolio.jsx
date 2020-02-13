@@ -30,7 +30,7 @@ const projects = [
     {
         "name": "CWBY Coin", description: "Experimental crypto exchange & marketplace", img: "/img/cwby.png",
         detail: "Purchase CWBY coins and spend them on merchandise in one site.",
-        href: "#",
+        href: "https://github.com/BrockSmedley/cwby-flask",
         tech: ["flask", "python3", "web3.js", "web3.py", "ethereum", "erc20", "stripe.js", "bootstrap", "javascript"]
     },
     {
